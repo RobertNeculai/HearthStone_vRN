@@ -54,7 +54,8 @@ public class App
         passive2.selfdamage=0;
         passive2.heal=0;
         passive2.efect="Summon a basic totem";
-
+        heroReference.passive=passive1;
+        hero1.passive=passive2;
 
 
 
