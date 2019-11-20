@@ -2,6 +2,11 @@ package org.fasttrackit;
 
 public class Card
 {
-    String name,expansion,rarity,efect;
-    int cost,attack,defense;
+    String name;
+    String expansion;
+    String rarity;
+    String efect;
+    int cost;
+    int attack;
+    int defense;
 }

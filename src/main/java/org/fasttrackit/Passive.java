@@ -1,6 +1,10 @@
 package org.fasttrackit;
 
 public class Passive {
-    String name,efect;
-    int attack,defense,heal,selfdamage;
+    String name;
+    String efect;
+    int attack;
+    int defense;
+    int heal;
+    int selfdamage;
 }

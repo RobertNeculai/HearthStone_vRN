@@ -20,10 +20,10 @@ public class App
         player1.level = 47;
         Hero heroReference = new Hero();
         heroReference.name="Garrosh";
-        heroReference.heroclass="Warrior";
+        heroReference.HerocClass="Warrior";
         Hero hero1 = new Hero();
         hero1.name="Thrall";
-        hero1.heroclass="Shaman";
+        hero1.HerocClass="Shaman";
         Card cardReference= new Card();
         cardReference.name="Deathwing Dragonlord";
         cardReference.attack=12;
