@@ -6,5 +6,5 @@ public class Passive {
     int attack;
     int defense;
     int heal;
-    int selfdamage;
+    int SelfDamage;
 }
