@@ -1,7 +1,13 @@
 package org.fasttrackit;
 
 public class MatchType {
-    String TypeName;
+    String typeName;
     boolean online;
-    int PlayerNumber;
+    int playerNumber;
+
+    public MatchType(String typeName, boolean online, int playerNumber) {
+        this.typeName = typeName;
+        this.online = online;
+        this.playerNumber = playerNumber;
+    }
 }

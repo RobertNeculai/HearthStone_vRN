@@ -10,53 +10,22 @@ public class App
     {
         System.out.println("HearthStone");
         System.out.println("cracked edition");
-        Player playerReference = new Player();
-        playerReference.name = "Robert";
-        playerReference.region = "Europe";
-        playerReference.level = 60;
-        Player player1 = new Player();
-        player1.name = "John";
-        player1.region = "North America";
-        player1.level = 47;
-        Hero heroReference = new Hero();
-        heroReference.name="Garrosh";
-        heroReference.HerocClass="Warrior";
-        Hero hero1 = new Hero();
-        hero1.name="Thrall";
-        hero1.HerocClass="Shaman";
-        Card cardReference= new Card();
-        cardReference.name="Deathwing Dragonlord";
-        cardReference.attack=12;
-        cardReference.defense=12;
-        cardReference.cost=10;
-        cardReference.efect="DeathRattle: After minion dies summon all Dragon type Cards in your Hand";
-        Card card2= new Card();
-        card2.name="Big Game Hunter";
-        card2.attack=4;
-        card2.defense=2;
-        card2.cost=7;
-        card2.efect="BattleCry; Destroy a minion with 7 or more attack";
-        Passive passive1= new Passive();
-        passive1.attack=0;
-        passive1.defense=2;
-        passive1.name="Armor up!";
-        passive1.heal=0;
-        passive1.SelfDamage=0;
-        passive1.efect="Gain 2 Armor";
-        Passive passive2= new Passive();
-        passive2.attack=0;
-        passive2.defense=0;
-        passive2.name="Force of the Elements";
-        passive2.SelfDamage=0;
-        passive2.heal=0;
-        passive2.efect="Summon a basic totem";
-        heroReference.passive=passive1;
-        hero1.passive=passive2;
-
-
-
-
-
+        Player playerReference = new Player("Robert","Europe",60);
+        Player player1 = new Player("John","North America",47);
+        Passive passive1= new Passive("Armor up!","Gain 2 Armor",0,2,0,0);
+        Passive passive2= new Passive("Force of the Elements","Summon a basic totem",0,0,0,0);
+        Hero heroReference = new Hero("Garrosh","Warrior",passive1);
+        Hero hero1 = new Hero("Thrall","Shaman",passive2);
+        Expansion expansion= new Expansion("Classic");
+        Expansion expansion1=new Expansion("Old Gods");
+        CardEffect cardEffect1=new CardEffect("Deathrattle: After this minion dies summon all Dragon type cards in your Hand",10,12,12,0);
+        CardEffect cardEffect2=new CardEffect("BattleCry; Destroy a minion with 7 or more attack",7,4,2,0);
+        Card cardReference= new Card("Deathwing Dragonlord","Epic",expansion1,cardEffect1);
+        Card card2= new Card("Big Game Hunter","Epic",expansion,cardEffect2);
+        MatchType match1=new MatchType("Ranked",true,2);
+        offline offline1=new offline("Offline",false,1,"Story","Hard");
+        MatchType match2=new MatchType("Battleground",true,8);
+        onlineRanked rank1= new onlineRanked("Ranked",true,1,true,"Lepper Gnome",24);
 
 
     }

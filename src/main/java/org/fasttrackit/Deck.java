@@ -3,6 +3,10 @@ package org.fasttrackit;
 public class Deck {
     int MaxSize = 30;
     Card card;
+    public Deck(Card card)
+    {
+        this.card=card;
+    }
 
 //    public void DeckBuilder() {
 //        String a[];

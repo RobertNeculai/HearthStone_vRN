@@ -1,10 +1,15 @@
 package org.fasttrackit;
 
-public class Card
-{
+public class Card {
     String name;
-    String efect;
-    int cost;
-    int attack;
-    int defense;
+    String rarity;
+    Expansion expansion;
+    CardEffect cardEffect;
+
+    public Card(String name, String rarity, Expansion expansion, CardEffect cardEffect) {
+        this.name = name;
+        this.rarity = rarity;
+        this.expansion = expansion;
+        this.cardEffect = cardEffect;
+    }
 }
