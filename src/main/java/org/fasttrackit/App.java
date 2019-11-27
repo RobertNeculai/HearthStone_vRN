@@ -20,8 +20,8 @@ public class App
         Expansion expansion1=new Expansion("Old Gods");
         Expansion expansion2=new Expansion("Frozen Knights");
         CardEffect cardEffect1=new CardEffect("Deathrattle: After this minion dies summon all Dragon type cards in your Hand",10,12,12,0,false);
-        CardEffect cardEffect2=new CardEffect("BattleCry; Destroy a minion with 7 or more attack",7,4,2,0,false);
-        CardEffect cardEffect3=new CardEffect("At the end of your turn gain 1 Death Knight Card",8,8,8,0,true);
+        CardEffect cardEffect2=new CardEffect("Battlecry; Destroy a minion with 7 or more attack",7,4,2,0,false);
+        CardEffect cardEffect3=new CardEffect("End of turn effect: At the end of your turn gain 1 Death Knight Card",8,8,8,0,true);
         Card cardReference= new Card("Deathwing Dragonlord","Epic",expansion1,cardEffect1);
         Card card2= new Card("Big Game Hunter","Epic",expansion,cardEffect2);
         Card car3=new Card("The Lich King","Legendary",expansion2,cardEffect3);
