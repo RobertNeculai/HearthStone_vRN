@@ -24,11 +24,12 @@ public class App
         CardEffect cardEffect3=new CardEffect("End of turn effect: At the end of your turn gain 1 Death Knight Card",8,8,8,0,true);
         Card cardReference= new Card("Deathwing Dragonlord","Epic",expansion1,cardEffect1);
         Card card2= new Card("Big Game Hunter","Epic",expansion,cardEffect2);
-        Card car3=new Card("The Lich King","Legendary",expansion2,cardEffect3);
+        Card card3=new Card("The Lich King","Legendary",expansion2,cardEffect3);
         MatchType match1=new MatchType("Ranked",true,2);
         offline offline1=new offline("Offline",false,1,"Story","Hard");
         MatchType match2=new MatchType("Battleground",true,8);
         onlineRanked rank1= new onlineRanked("Ranked",true,1,true,"Lepper Gnome",24);
+
 
     }
 }
