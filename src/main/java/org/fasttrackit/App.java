@@ -18,15 +18,17 @@ public class App
         Hero hero1 = new Hero("Thrall","Shaman",passive2);
         Expansion expansion= new Expansion("Classic");
         Expansion expansion1=new Expansion("Old Gods");
-        CardEffect cardEffect1=new CardEffect("Deathrattle: After this minion dies summon all Dragon type cards in your Hand",10,12,12,0);
-        CardEffect cardEffect2=new CardEffect("BattleCry; Destroy a minion with 7 or more attack",7,4,2,0);
+        Expansion expansion2=new Expansion("Frozen Knights");
+        CardEffect cardEffect1=new CardEffect("Deathrattle: After this minion dies summon all Dragon type cards in your Hand",10,12,12,0,false);
+        CardEffect cardEffect2=new CardEffect("BattleCry; Destroy a minion with 7 or more attack",7,4,2,0,false);
+        CardEffect cardEffect3=new CardEffect("At the end of your turn gain 1 Death Knight Card",8,8,8,0,true);
         Card cardReference= new Card("Deathwing Dragonlord","Epic",expansion1,cardEffect1);
         Card card2= new Card("Big Game Hunter","Epic",expansion,cardEffect2);
+        Card car3=new Card("The Lich King","Legendary",expansion2,cardEffect3);
         MatchType match1=new MatchType("Ranked",true,2);
         offline offline1=new offline("Offline",false,1,"Story","Hard");
         MatchType match2=new MatchType("Battleground",true,8);
         onlineRanked rank1= new onlineRanked("Ranked",true,1,true,"Lepper Gnome",24);
-
 
     }
 }
