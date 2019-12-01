@@ -38,5 +38,7 @@ public class App
         player1.passivepowerPlay(hero1,turnA);
         turnB.NewTurn(turnB);
         playerReference.cardPlay(cardReference,turnB);
+        turnA.NewTurn(turnA);
+        player1.cardPlay(card3,turnA);
     }
 }
