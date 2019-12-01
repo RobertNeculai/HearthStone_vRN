@@ -3,10 +3,10 @@ package org.fasttrackit;
 import java.util.Scanner;
 
 public class Player {
-    String name;
-    String region;
-    int level;
-    int rank;
+    private String name;
+    private String region;
+    private int level;
+    private int rank;
     public Player(String name, String region, int level,int rank) {
         this.name = name;
         this.region = region;
@@ -21,30 +21,62 @@ public class Player {
     }
     public void cardPlay(Card card,Turn turn)
     {
-        if(turn.mana>=card.cardEffect.cost) {
-            System.out.println(name + " just played " + card.name + " in turn " + turn.tnumber);
-            turn.mana -=card.cardEffect.cost;
-            System.out.println("mana remaining " + turn.mana);
+        if(turn.getMana()>=card.getCardEffect().getCost()) {
+            System.out.println(name + " just played " + card.getName() + " in turn " + turn.getTnumber());
+            turn.setMana(turn.getMana()-card.getCardEffect().getCost());
+            System.out.println("mana remaining " + turn.getMana());
         }
         else
             System.out.println("Not enough mana to play that card ");
     }
     public void DeathRattlePlay(Card a,Card b,Synergy synergy)
     {
-        if(a.cardEffect.defense==0 && synergy.synergyActive(a,b)) {
-            System.out.println(a.name + " triggered  " + a.cardEffect.efect);
-            System.out.println(b.name + " has been summoned");
-            a.active=true;
+        if(a.getCardEffect().getDefense()<=0 && synergy.synergyActive(a,b)) {
+            System.out.println(a.getName() + " triggered  " + a.getCardEffect().getEfect());
+            System.out.println(b.getName() + " has been summoned");
+            a.setActive(true);
         }
     }
     public void passivepowerPlay(Hero hero, Turn turn)
     {
-        if(turn.mana>=hero.passive.cost) {
-            System.out.println(name + " playing as " + hero.name + " used " + hero.passive.name);
-            turn.mana -= hero.passive.cost;
-            System.out.println("mana remaining " + turn.mana);
+        if(turn.getMana()>=hero.getPassive().getCost()) {
+            System.out.println(name + " playing as " + hero.getName() + " used " + hero.getPassive().getName());
+            turn.setMana(turn.getMana()-hero.getPassive().getCost());
+            System.out.println("mana remaining " + turn.getMana());
         }
         else
             System.out.println("Not enough mana to use that ");
         }
+
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
+}

@@ -1,44 +1,44 @@
 package org.fasttrackit;
 
 public class Game {
-    Turn turnA;
-    Card activeCard1;
-    Card activeCard2;
-    Card activeCard3;
-    Card activeCard4;
-    Card activeCard5;
-    Card activeCard6;
-    Card activeCard7;
-    Turn turnB;
-    Hero hero1;
-    Deck deck1;
-    Card a;
-    Card b;
-    int boardLimit=7;
+   private Turn turnA;
+   private Card activeCard1;
+   private Card activeCard2;
+   private Card activeCard3;
+   private Card activeCard4;
+   private Card activeCard5;
+   private Card activeCard6;
+   private Card activeCard7;
+   private Turn turnB;
+   private Hero hero1;
+   private Deck deck1;
+   private Card a;
+   private Card b;
+   private int boardLimit=7;
     public void activeCard(Card card) {
-        if(card.active)
+        if(card.isActive())
             System.out.println("Can be used");
         else
             System.out.println("Give this card a turn to activate");
     }
 
     public void cardDestoyed(Card a) {
-        if (a.cardEffect.defense <= 0) {
-            System.out.println(a.name + " has been destoyed");
-            a.active = false;
+        if (a.getCardEffect().getDefense() <= 0) {
+            System.out.println(a.getName() + " has been destoyed");
+            a.setActive(false);
         }
     }
     public void Attack(Card a,Card b) {
-        if (a.cardEffect.attack > 0) {
-            a.cardEffect.defense = a.cardEffect.defense  - b.cardEffect.attack;
-            b.cardEffect.defense = b.cardEffect.defense  - a.cardEffect.attack;
-            System.out.println(a.name+" has attacked "+b.name);
-            System.out.println(b.name+" has "+b.cardEffect.defense+" health left");
-            System.out.println(a.name+" has "+a.cardEffect.defense+" health left");
+        if (a.getCardEffect().getAttack()> 0) {
+            a.getCardEffect().setDefense(a.getCardEffect().getDefense()  - b.getCardEffect().getAttack());
+            b.getCardEffect().setDefense( b.getCardEffect().getDefense() - a.getCardEffect().getAttack());
+            System.out.println(a.getName()+" has attacked "+b.getName());
+            System.out.println(b.getName()+" has "+b.getCardEffect().getDefense()+" health left");
+            System.out.println(a.getName()+" has "+a.getCardEffect().getDefense()+" health left");
             cardDestoyed(a);
             cardDestoyed(b);
         } else
-            System.out.println(a.name + " can't attack");
+            System.out.println(a.getName() + " can't attack");
     }
 }
 

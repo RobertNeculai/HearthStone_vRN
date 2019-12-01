@@ -1,8 +1,8 @@
 package org.fasttrackit;
 
 public class Offline extends MatchType {
-String type;
-String difficulty;
+private String type;
+private String difficulty;
 
 
     public Offline(String typeName, boolean online, int playerNumber, String type, String difficulty) {

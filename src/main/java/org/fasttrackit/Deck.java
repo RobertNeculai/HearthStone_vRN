@@ -1,8 +1,8 @@
 package org.fasttrackit;
 
 public class Deck {
-    int MaxSize = 30;
-    Card card;
+   private int MaxSize = 30;
+   private Card card;
     public Deck(Card card)
     {
         this.card=card;

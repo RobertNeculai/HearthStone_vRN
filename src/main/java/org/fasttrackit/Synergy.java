@@ -9,10 +9,18 @@ public class Synergy {
     }
 
     public boolean synergyActive(Card a,Card b) {
-        if (a.type == b.type) {
+        if (a.getType() == b.getType()) {
             System.out.println("Synergy Active");
             return true;
         } else
             return false;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

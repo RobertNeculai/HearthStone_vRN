@@ -7,6 +7,14 @@ public class Expansion  {
     public Expansion(String expansionName) {
         this.expansionName = expansionName;
     }
+
+    public String getExpansionName() {
+        return expansionName;
+    }
+
+    public void setExpansionName(String expansionName) {
+        this.expansionName = expansionName;
+    }
 }
 
 
