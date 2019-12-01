@@ -7,7 +7,6 @@ public class CardEffect {
     int defense;
     int heal;
     boolean taunt;
-    String type;
 
     public CardEffect(String efect, int cost, int attack, int defense, int heal,boolean taunt) {
         this.efect = efect;

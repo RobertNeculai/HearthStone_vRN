@@ -7,7 +7,6 @@ public class Player {
     String region;
     int level;
     int rank;
-
     public Player(String name, String region, int level,int rank) {
         this.name = name;
         this.region = region;
@@ -29,7 +28,14 @@ public class Player {
         }
         else
             System.out.println("Not enough mana to play that card ");
-
+    }
+    public void DeathRattlePlay(Card a,Card b,Synergy synergy)
+    {
+        if(a.cardEffect.defense==0 && synergy.synergyActive(a,b)) {
+            System.out.println(a.name + " triggered  " + a.cardEffect.efect);
+            System.out.println(b.name + " has been summoned");
+            a.active=true;
+        }
     }
     public void passivepowerPlay(Hero hero, Turn turn)
     {

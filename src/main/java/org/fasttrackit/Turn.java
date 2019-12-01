@@ -26,6 +26,7 @@ public class Turn {
                 turn.tnumber++;
                 turn.mana = 10;
         }
+        System.out.println("New Turn: "+turn.tnumber);
     }
 }
     // healthRemaining se refera la viata eroului care porneste de la 30 inceputul meciului si care poate varia in functie de modul de match ales
