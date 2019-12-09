@@ -1,18 +1,35 @@
 package org.fasttrackit;
 
+import java.util.Date;
+
 public class Turn {
    private int time = 30;
    private int mana = 0;
    private int tnumber = 0;
    private int healthRemaining = 30;
    private Card cardPlayed;
+   Date startDate;
+   Date endDate;
 
     public Turn(int mana, int tnumber, int healthRemaining) {
         this.mana = mana;
         this.tnumber = tnumber;
         this.healthRemaining = healthRemaining;
     }
-
+    public void EndTurn(Turn turn)
+    {
+       while(time!=0)
+       {
+           if(time%5==0)
+           System.out.println((time)+" seconds left until turn ends");
+               time--;
+       }
+        if(time==0)
+        {
+            System.out.println("This turn has ended ");
+            NewTurn(turn);
+        }
+    }
     public void NewTurn(Turn turn) {
         if (turn.mana == 0 && turn.tnumber == 0) {
             turn.mana = 1;
@@ -26,7 +43,7 @@ public class Turn {
                 turn.tnumber++;
                 turn.mana = 10;
         }
-        System.out.println("New Turn: "+turn.tnumber);
+        System.out.println("New Turn: "+turn.tnumber+" Mana Available: "+turn.mana);
     }
 
     public int getTime() {

@@ -19,11 +19,13 @@ public class App
         Type Dragon=new Type("Dragon");
         Type Human=new Type("Human");
         Type DeathKnight=new Type("Death Knight");
+        Type GM=new Type("GM");
         Expansion expansion= new Expansion("Classic");
         Expansion expansion1=new Expansion("Old Gods");
         Expansion expansion2=new Expansion("Frozen Knights");
+        CardEffect GmEffect=new CardEffect("Invincible",1000,100,1000,1000,true);
         CardEffect cardEffect1=new CardEffect("Deathrattle: After this minion dies summon all Dragon type cards in your Hand",10,12,12,0,false);
-        CardEffect cardEffect2=new CardEffect("Battlecry; Destroy a minion with 7 or more attack",7,4,2,0,false);
+        CardEffect cardEffect2=new CardEffect("Battlecry; Destroy a minion with 7 or more attack",5,4,2,0,false);
         CardEffect cardEffect3=new CardEffect("End of turn effect: At the end of your turn gain 1 Death Knight Card",8,8,8,0,true);
         CardEffect cardEffect4=new CardEffect("Turns now only last 15s",8,8,8,0,false);
         Card card4=new Card("Nozdormu,Aspect of Time","Legendary",Dragon,expansion,cardEffect4);
@@ -36,19 +38,22 @@ public class App
         OnlineRanked rank1= new OnlineRanked("Ranked",true,1,true,"Lepper Gnome",24);
         Turn turnA = new Turn(9,9,30);
         Turn turnB=new Turn(9,9,30);
+        Player cheat=new CheatPlayer("Cheater","Asia",60,1);
         Game newGame= new Game();
+        cheat.cardPlay(cardReference,turnA);
         player1.cardPlay(card2,turnA);
+        turnA.EndTurn(turnA);
         playerReference.cardPlay(cardReference,turnB);
-        turnA.NewTurn(turnA);
+        turnB.EndTurn(turnB);
         player1.cardPlay(card3,turnA);
         player1.passivepowerPlay(hero1,turnA);
-        turnB.NewTurn(turnB);
+        turnA.EndTurn(turnA);
         playerReference.cardPlay(cardReference,turnB);
         Synergy dragonSynergy=new Synergy("Dragon");
-        turnA.NewTurn(turnA);
         player1.cardPlay(card3,turnA);
         newGame.Attack(card2,cardReference);
         newGame.Attack(card3,cardReference);
         playerReference.DeathRattlePlay(cardReference,card4,dragonSynergy);
+
     }
 }

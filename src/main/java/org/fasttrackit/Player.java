@@ -48,7 +48,7 @@ public class Player {
             System.out.println("Not enough mana to use that ");
         }
 
-    public String getName() {
+    public  String getName() {
         return name;
     }
 

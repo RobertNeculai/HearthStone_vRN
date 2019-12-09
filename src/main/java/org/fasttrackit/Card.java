@@ -15,7 +15,16 @@ public class Card {
         this.expansion = expansion;
         this.cardEffect = cardEffect;
     }
-
+    public void cardPlay(Card card,Turn turn)
+    {
+        if(turn.getMana()>=card.getCardEffect().getCost()) {
+            System.out.println(name + " just played " + card.getName() + " in turn " + turn.getTnumber());
+            turn.setMana(turn.getMana()-card.getCardEffect().getCost());
+            System.out.println("mana remaining " + turn.getMana());
+        }
+        else
+            System.out.println("Not enough mana to play that card ");
+    }
     public String getName() {
         return name;
     }
