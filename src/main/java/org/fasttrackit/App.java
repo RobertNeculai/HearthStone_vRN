@@ -8,6 +8,7 @@ public class App
 {
     public static void main( String[] args )
     {
+        CardList list=new CardList();
         System.out.println("HearthStone");
         System.out.println("cracked edition");
         Player playerReference = new Player("Robert","Europe",60,24);
@@ -40,7 +41,6 @@ public class App
         Turn turnB=new Turn(9,9,30);
         Player cheat=new CheatPlayer("Cheater","Asia",60,1);
         Game newGame= new Game();
-        cheat.cardPlay(cardReference,turnA);
         player1.cardPlay(card2,turnA);
         turnA.EndTurn(turnA);
         playerReference.cardPlay(cardReference,turnB);
@@ -54,6 +54,8 @@ public class App
         newGame.Attack(card2,cardReference);
         newGame.Attack(card3,cardReference);
         playerReference.DeathRattlePlay(cardReference,card4,dragonSynergy);
+        //Deck deck1=new Deck;
+        //deck1.
 
     }
 }

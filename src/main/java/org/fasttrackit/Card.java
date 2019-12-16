@@ -1,5 +1,8 @@
 package org.fasttrackit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Card {
    private String name;
    private String rarity;
@@ -8,12 +11,29 @@ public class Card {
    private Expansion expansion;
    private CardEffect cardEffect;
 
-    public Card(String name, String rarity,Type type, Expansion expansion, CardEffect cardEffect) {
-        this.name = name;
+
+
+    private static ArrayList<Card> allCards = new ArrayList<Card>();
+
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    public Card(String name, String rarity, Type type, Expansion expansion, CardEffect cardEffect) {
+        this.name=name;
         this.rarity = rarity;
         this.type=type;
         this.expansion = expansion;
         this.cardEffect = cardEffect;
+        allCards.add(this);
+
     }
     public void cardPlay(Card card,Turn turn)
     {
@@ -71,5 +91,8 @@ public class Card {
 
     public void setCardEffect(CardEffect cardEffect) {
         this.cardEffect = cardEffect;
+    }
+    public static ArrayList<Card> getAllCards() {
+        return allCards;
     }
 }
