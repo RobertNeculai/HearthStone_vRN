@@ -10,21 +10,8 @@ public class Card {
    private boolean active;
    private Expansion expansion;
    private CardEffect cardEffect;
+   public static ArrayList<Card> allCards = new ArrayList<Card>();
 
-
-
-    private static ArrayList<Card> allCards = new ArrayList<Card>();
-
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
 
     public Card(String name, String rarity, Type type, Expansion expansion, CardEffect cardEffect) {
         this.name=name;
@@ -35,15 +22,18 @@ public class Card {
         allCards.add(this);
 
     }
-    public void cardPlay(Card card,Turn turn)
+    public boolean cardPlay(Card card,Turn turn)
     {
         if(turn.getMana()>=card.getCardEffect().getCost()) {
             System.out.println(name + " just played " + card.getName() + " in turn " + turn.getTnumber());
             turn.setMana(turn.getMana()-card.getCardEffect().getCost());
             System.out.println("mana remaining " + turn.getMana());
+            return true;
         }
-        else
+        else {
             System.out.println("Not enough mana to play that card ");
+            return false;
+        }
     }
     public String getName() {
         return name;

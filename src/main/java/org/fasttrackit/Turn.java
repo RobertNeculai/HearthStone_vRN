@@ -1,31 +1,27 @@
 package org.fasttrackit;
 
+import java.time.Instant;
 import java.util.Date;
 
 public class Turn {
    private int time = 30;
    private int mana = 0;
    private int tnumber = 0;
-   private int healthRemaining = 30;
    private Card cardPlayed;
    Date startDate;
    Date endDate;
 
-    public Turn(int mana, int tnumber, int healthRemaining) {
+    public Turn(int mana,int tnumber) {
         this.mana = mana;
         this.tnumber = tnumber;
-        this.healthRemaining = healthRemaining;
     }
-    public void EndTurn(Turn turn)
-    {
-       while(time!=0)
-       {
-           if(time%5==0)
-           System.out.println((time)+" seconds left until turn ends");
-               time--;
-       }
-        if(time==0)
-        {
+    public void EndTurn(Turn turn) {
+        Instant start = Instant.now();
+        System.out.println("This turn has started ");
+
+        if (Instant.now().minusSeconds(30).isBefore(start))
+            System.out.println("Beware round is only 30 seconds ");
+        else {
             System.out.println("This turn has ended ");
             NewTurn(turn);
         }
@@ -35,7 +31,7 @@ public class Turn {
             turn.mana = 1;
             turn.tnumber = 1;
         }
-         if(turn.tnumber<10) {
+         else if(turn.tnumber<10) {
             turn.tnumber++;
             turn.mana = turn.tnumber;
         }
@@ -43,7 +39,6 @@ public class Turn {
                 turn.tnumber++;
                 turn.mana = 10;
         }
-        System.out.println("New Turn: "+turn.tnumber+" Mana Available: "+turn.mana);
     }
 
     public int getTime() {
@@ -68,14 +63,6 @@ public class Turn {
 
     public void setTnumber(int tnumber) {
         this.tnumber = tnumber;
-    }
-
-    public int getHealthRemaining() {
-        return healthRemaining;
-    }
-
-    public void setHealthRemaining(int healthRemaining) {
-        this.healthRemaining = healthRemaining;
     }
 
     public Card getCardPlayed() {
